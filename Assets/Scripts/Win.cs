@@ -8,5 +8,6 @@ public class Win : MonoBehaviour
     public void loadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
     }
 }

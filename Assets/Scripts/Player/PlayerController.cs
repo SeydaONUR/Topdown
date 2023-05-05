@@ -32,7 +32,8 @@ public class PlayerController : MonoBehaviour
     public BombController molotov;//molotof
     private bool canBomb;
     public GameObject tutorial;
-    
+
+    public GameObject escMenu;
 
 
     public ScriptableWeapon[] weapons;
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour
         score = 0;
         canShot = true;
         currentWeapon = 0;
+        escMenu.SetActive(false);
         
     }
 
@@ -82,7 +84,15 @@ public class PlayerController : MonoBehaviour
         else
         {
             anim.SetTrigger("Gatling");
-        }     
+        }
+        if (Input.GetKeyDown(KeyCode.Escape) && escMenu.activeSelf==false)
+        {
+            escMenu.SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape) && escMenu.activeSelf == true)
+        {
+            escMenu.SetActive(false);
+        }
 
     }
 
